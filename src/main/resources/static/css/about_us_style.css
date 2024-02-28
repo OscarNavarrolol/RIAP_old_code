@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+
+body {
+    background: url("https://images.squarespace-cdn.com/content/v1/5ac2ddf285ede15e39a57666/ae2896cb-3768-41bb-8bc3-7e5298dfcd0b/Design-Anthology-2022-04+Light+_+Dark+apartment%2C+Tainan+-+Degree+Design-Degree_Design_BBBLACK-213.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    width: 400px;
+    padding: 2rem;
+    background: rgba(243, 237, 237, 0.6);
+    box-shadow: 0 3px 5px #0000004c;
+}
+
+.card img {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

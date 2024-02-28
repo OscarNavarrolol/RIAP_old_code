@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,900;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/homepage_style.css">
+    <title>Riap Page</title>
+</head>
+<body>
+<nav class="container ">
+    <span class="logo">Logo</span>
+    <ul class="list-items hidden">
+        <li class="list-item"><a th:href="@{/aboutUs}">About Us</a> </li>
+        <li class="list-item">Benefit</li>
+        <li class="list-item">Projects</li>
+        <li class="list-item">Stages</li>
+        <li class="list-item">Services</li>
+        <li>
+                <span class="phone-svg">
+                </span> Call Us <br /> 9373105031
+        </li>
+    </ul>
+</nav>
+<main>
+    <div class="hero-section">
+        <h1>Interior Design That Care About You</h1>
+        <button class="btn">Learn More</button>
+    </div>
+    <!-- ---cards---- -->
+
+    <div class="card-section">
+
+        <p class="card card-light">
+                <span class="icon-span"><img width="32" src="./assets/icons-bulb.png" alt="" />
+                </span>
+            <span class="desc">Innovation ideas, stylish, design for Home & Business</span>
+            <span class="line">
+                    <svg width="100" height="30" viewBox="0 0 160 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="145" cy="15" r="15" fill="white" />
+                        <path d="M1 15L145 15.5" stroke="white" stroke-width="3" />
+                    </svg>
+                </span>
+        </p>
+        <p class="card card-puzzle">
+                <span class="icon-span"><img width="32" src="./assets/icons-puzzle.png" alt="" />
+                </span>
+            <span class="desc">We create your space better based on your own idea</span>
+            <span class="line">
+                    <svg width="100" height="30" viewBox="0 0 160 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="145" cy="15" r="15" fill="white" />
+                        <path d="M1 15L145 15.5" stroke="white" stroke-width="3" />
+                    </svg>
+                </span>
+    </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+
+body {
+    background: url("https://images.squarespace-cdn.com/content/v1/5ac2ddf285ede15e39a57666/ae2896cb-3768-41bb-8bc3-7e5298dfcd0b/Design-Anthology-2022-04+Light+_+Dark+apartment%2C+Tainan+-+Degree+Design-Degree_Design_BBBLACK-213.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 3rem;
+    font-size: 1.2rem;
+    color: rgb(239, 225, 225);
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    width: 100px;
+    line-height: 1.1;
+}
+
+.list-items {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+    gap: 4rem;
+    font-weight: 500;
+}
+
+.list-items::after {
+    position: absolute;
+    bottom: -25px;
+    right: -1px;
+    content: "";
+    height: 2px;
+    border-bottom: 3px solid rgb(235, 224, 224);
+    width: 100%;
+}
+
+.list-items li:last-child {
+    position: relative;
+    margin-left: 40px;
+}
+
+.phone-svg svg {
+    position: absolute;
+    width: 180%;
+    left: -227px;
+    top: -40px;
+}
+
+.phone-svg svg path {
+    fill: rgb(248, 239, 239);
+}
+
+
+/* ---hero section--- */
+
+.hero-section h1 {
+    font-size: 4rem;
+    width: 900px;
+    margin-top: 12rem;
+    margin-left: 7rem;
+    color: #fff;
+}
+
+.btn {
+    background: none;
+    border: 4px solid rgb(226, 219, 219);
+    border-radius: 5rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(233, 220, 220);
+    margin-left: 7rem;
+    margin-top: 3rem;
+    padding: 1rem 3rem;
+}
+
+
+/* ---card section--- */
+
+.card {
+    width: 300px;
+    height: 200px;
+    padding: 2rem;
+    background: #f3eded84;
+    position: absolute;
+    box-shadow: 0 3px 5px #0000004c;
+    opacity: 0.6;
+}
+
+.card-puzzle {
+    position: absolute;
+    top: 12rem;
+    right: 10rem;
+    height: 11rem;
+}
+
+.card-light {
+    position: absolute;
+    bottom: 5rem;
+    right: 15rem;
+    margin-right: 11rem;
+}
+
+.card-light .line {
+    position: absolute;
+    top: 30px;
+    left: 298px;
+}
+
+.icon-span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    border-radius: 5rem;
+    background: #fff;
+}
+
+.desc {
+    position: absolute;
+    margin-right: 1rem;
+    bottom: 2rem;
+    font-weight: 600;
+}
+
+.card-puzzle .line {
+    position: absolute;
+    bottom: -67px;
+    right: 20px;
+    transform: rotate(90deg);
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        margin: 20px;
+        overflow-x: auto;
+    }
+    .hidden {
+        overflow: hidden;
+    }
+    body {
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .list-items {
+        font-size: 10px;
+        gap: 1rem;
+        font-weight: 500;
+    }
+    .hero-section {
+        width: 1rem;
+    }
+    .hero-section h1 {
+        margin-top: 55rem;
+        margin-left: 1rem;
+        font-size: 1.3rem;
+    }
+    .btn {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-left: 8rem;
+        margin-top: 3rem;
+        padding: 1rem 2rem;
+    }
+    .card-light {
+        position: absolute;
+        bottom: 20px;
+        left: 100px;
+        margin-left: 10rem;
+    }
+    .card-puzzle {
+        position: absolute;
+        margin-top: 6rem;
+        top: 100px;
+        left: 100px;
+        margin-right: -8rem;
+    }
+}
+
+@media only screen and (min-width: 640px) and (max-width: 1024px) {
+    body {
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .hidden {
+        overflow: hidden;
+    }
+    .list-items {
+        font-size: 10px;
+        gap: 1rem;
+        font-weight: 500;
+    }
+    .hero-section {
+        width: 1rem;
+        align-items: center;
+    }
+    .hero-section h1 {
+        margin-top: 35rem;
+        margin-left: 2rem;
+        font-size: 3rem;
+    }
+    .card-light {
+        bottom: 1rem;
+        right: 15rem;
+        margin-right: 6rem;
+    }
+}
