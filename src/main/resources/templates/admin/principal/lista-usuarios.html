@@ -1,0 +1,42 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+    <h1>Lista de Usuarios</h1>
+
+    <table class="table table-dark">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Documento</th>
+            <th>Edad</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Imagen de Perfil</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="usuario : ${usuarios}">
+            <td th:text="${usuario.idUser}"></td>
+            <td th:text="${usuario.document}"></td>
+            <td th:text="${usuario.age}"></td>
+            <td th:text="${usuario.nameUser}"></td>
+            <td th:text="${usuario.email}"></td>
+            <td th:text="${usuario.phone}"></td>
+            <td>
+                <img th:if="${usuario.profilePicture != null}" th:src="${usuario.profilePicture}" alt="Imagen de Perfil" style="max-width: 100px;">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
