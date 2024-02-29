@@ -28,7 +28,13 @@ public class controllersupreme {
     public String getAboutUsPage(){
         return "admin/principal/about_us";
     }
+/*
+    @GetMapping("/aboutUs")
+    public String getLoginPage(){
+        return "admin/principal/about_us";
+    }
 
+ */
     @GetMapping
     public String getHomePage(){
         return "admin/principal/homepage";

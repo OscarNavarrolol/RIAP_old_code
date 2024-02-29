@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface UserRecordRepository extends JpaRepository<UserRecord,Long> {
     /*
-    @Query(name ="SELECT * FROM user_record WHERE",nativeQuery = true)
+    @Query(name ="SELECT * FROM user_record WHERE:recordId",nativeQuery = true)
     List<UserRecord> findByRecordId(Long recordId);
 
     List<UserRecord> findByUserId(Long userId);
