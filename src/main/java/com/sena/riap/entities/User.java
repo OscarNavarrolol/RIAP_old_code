@@ -40,7 +40,9 @@ public class User {
     @NotBlank(message = "Phone cannot be blank")
     @Size(min = 10, max = 10, message = "Phone number must be exactly 10 digits")
     private String phone;
+    private String role;
 
+    private String password;
     @Column(name = "profile_picture")
     private String profilePicture;
 
