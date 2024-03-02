@@ -1,6 +1,6 @@
 package com.sena.riap.service.impl;
 
-import com.sena.riap.entities.User;
+import com.sena.riap.entities.UserData;
 import com.sena.riap.repository.UserRepository;
 import com.sena.riap.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,22 +15,22 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public List<User> getUsers() {
+    public List<UserData> getUsers() {
         return userRepository.findAll();
     }
 
     @Override
-    public User saveUser(User user) {
+    public UserData saveUser(UserData userData) {
         return null;
     }
 
     @Override
-    public User getUserById(Long id) {
+    public UserData getUserById(Long id) {
         return null;
     }
 
     @Override
-    public User updateUser(Long id, User user) {
+    public UserData updateUser(Long id, UserData userData) {
         return null;
     }
 

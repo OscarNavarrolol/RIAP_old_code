@@ -1,28 +1,28 @@
 package com.sena.riap.service.impl;
 
-import com.sena.riap.entities.Record;
+import com.sena.riap.entities.Course;
 import com.sena.riap.service.RecordService;
 
 import java.util.List;
 
 public class RecordServiceImpl implements RecordService {
     @Override
-    public List<Record> getRecord() {
+    public List<Course> getRecord() {
         return null;
     }
 
     @Override
-    public Record saveRecord(Record record) {
+    public Course saveRecord(Course course) {
         return null;
     }
 
     @Override
-    public Record getRecordById(Long id) {
+    public Course getRecordById(Long id) {
         return null;
     }
 
     @Override
-    public Record updateRecord(Long id, Record record) {
+    public Course updateRecord(Long id, Course course) {
         return null;
     }
 

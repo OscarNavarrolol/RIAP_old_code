@@ -1,25 +1,25 @@
 package com.sena.riap.service;
 
-import com.sena.riap.entities.Record;
-import com.sena.riap.entities.UserRecord;
+import com.sena.riap.entities.Course;
+import com.sena.riap.entities.UserCourse;
 
 import java.util.List;
 
 public interface UserRecordService {
 
 
-    public List<Record> getUserRecord();
+    public List<Course> getUserRecord();
 
-    public Record saveUserRecord(Record record);
+    public Course saveUserRecord(Course course);
 
-    public Record getUserRecordById(Long id);
+    public Course getUserRecordById(Long id);
 
-    public Record updateUserRecord(Long id,Record record);
+    public Course updateUserRecord(Long id, Course course);
 
     public void deleteUserRecord(Long id);
-    List<UserRecord> getUserRecordsByRecordId(Long recordId);
+    List<UserCourse> getUserRecordsByRecordId(Long recordId);
 
-    List<UserRecord> getUserRecordsByUserId(Long userId);
+    List<UserCourse> getUserRecordsByUserId(Long userId);
 
 
 }

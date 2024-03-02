@@ -25,12 +25,12 @@ public class Attendance {
     @NotNull(message = "Event cannot be null")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_event")
-    private Event event;
+    private EventData eventData;
 
     @NotNull(message = "User cannot be null")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_user")
-    private User user;
+    private UserData userData;
 
     @NotNull(message = "Attendance time cannot be null")
     @Column(name = "attendance_time")

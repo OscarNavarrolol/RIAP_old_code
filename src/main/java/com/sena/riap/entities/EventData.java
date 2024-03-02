@@ -9,14 +9,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDate;
-import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "event")
-public class Event {
+@Table(name = "event_data")
+public class EventData {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_event")
@@ -24,6 +23,7 @@ public class Event {
 
     @NotNull(message = "Date cannot be null")
     @Future(message = "Date must be in the future")
+    @Column(name = "date_event")
     private LocalDate date;
 
     @NotBlank(message = "Objective cannot be blank")
@@ -38,6 +38,6 @@ public class Event {
     @NotNull(message = "End time cannot be null")
     private LocalDate endTime;
 
-    @NotBlank(message = "Place cannot be blank")
-    private String place;
+    @NotBlank(message = "location cannot be blank")
+    private String location;
 }

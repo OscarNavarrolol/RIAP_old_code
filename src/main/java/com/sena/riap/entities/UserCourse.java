@@ -8,20 +8,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "user_record")
-public class UserRecord {
+@Table(name = "user_course")
+public class UserCourse {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_user_record")
+    @Column(name = "id_user_course")
     private Long idUserRecord;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_record")
-    private Record record;
+    @JoinColumn(name = "id_course")
+    private Course course;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_user")
-    private User user;
+    private UserData userData;
 
 }

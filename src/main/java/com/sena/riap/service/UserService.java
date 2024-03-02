@@ -1,20 +1,19 @@
 package com.sena.riap.service;
 
-import com.sena.riap.entities.Record;
-import com.sena.riap.entities.User;
+import com.sena.riap.entities.UserData;
 
 import java.util.List;
 
 public interface UserService {
 
-    public List<User> getUsers();
+    public List<UserData> getUsers();
 
-    public User saveUser(User user);
+    public UserData saveUser(UserData userData);
 
-    public User getUserById(Long id);
+    public UserData getUserById(Long id);
 
 
-    public User updateUser(Long id,User user);
+    public UserData updateUser(Long id, UserData userData);
 
     public void deleteUser(Long id);
 

@@ -1,18 +1,18 @@
 package com.sena.riap.service;
 
-import com.sena.riap.entities.Event;
+import com.sena.riap.entities.EventData;
 
 import java.util.List;
 
 public interface EventService {
 
-    public List<Event> getEvents();
+    public List<EventData> getEvents();
 
-    public Event saveEvent(Event event);
+    public EventData saveEvent(EventData eventData);
 
-    public Event getEventById(Long id);
+    public EventData getEventById(Long id);
 
-    public Event updateEvent(Long id,Event event);
+    public EventData updateEvent(Long id, EventData eventData);
 
     public void deleteEvent(Long id);
 

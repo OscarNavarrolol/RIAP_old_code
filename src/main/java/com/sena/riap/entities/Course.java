@@ -10,13 +10,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "record")
-public class Record {
+@Table(name = "course")
+public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_record")
-    private Long idRecord;
+    @Column(name = "id_course")
+    private Long idCourse;
 
     @NotNull(message = "Number cannot be null")
     private Integer number;
@@ -24,5 +24,6 @@ public class Record {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_program")
     private Program program;
+
 
 }

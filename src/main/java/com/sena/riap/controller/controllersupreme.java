@@ -1,7 +1,6 @@
 package com.sena.riap.controller;
 
-import com.sena.riap.entities.User;
-import com.sena.riap.repository.UserRepository;
+import com.sena.riap.entities.UserData;
 import com.sena.riap.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,8 +18,8 @@ public class controllersupreme {
 
     @GetMapping("/users")
     public String listarUsuarios(Model model) {
-        List<User> users = userService.getUsers();
-        model.addAttribute("usuarios", users);
+        List<UserData> userData = userService.getUsers();
+        model.addAttribute("usuarios", userData);
         return "admin/principal/list_users";
     }
 
