@@ -21,16 +21,15 @@ public class Attendance {
     @Column(name = "id_attendance")
     private Long idAttendance;
 
+    // @NotNull(message = "Event cannot be null")
+    // @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "id_event")
+    private Long idEvent;
 
-    @NotNull(message = "Event cannot be null")
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_event")
-    private EventData eventData;
-
-    @NotNull(message = "User cannot be null")
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_user")
-    private UserData userData;
+    // @NotNull(message = "User cannot be null")
+    //  @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "id_user")
+    private Long idUser;
 
     @NotNull(message = "Attendance time cannot be null")
     @Column(name = "attendance_time")

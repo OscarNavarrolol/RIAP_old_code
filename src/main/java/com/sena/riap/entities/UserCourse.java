@@ -14,14 +14,14 @@ public class UserCourse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_user_course")
-    private Long idUserRecord;
+    private Long idUserCourse;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_course")
-    private Course course;
+    //@ManyToOne(cascade = CascadeType.ALL)
+    @Column(name = "id_course")
+    private Long idCourse;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    // @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_user")
-    private UserData userData;
+    private Long IdUser;
 
 }

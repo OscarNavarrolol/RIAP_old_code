@@ -23,15 +23,15 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="usuario : ${usuarios}">
-            <td th:text="${usuario.idUser}"></td>
-            <td th:text="${usuario.document}"></td>
-            <td th:text="${usuario.age}"></td>
-            <td th:text="${usuario.nameUser}"></td>
-            <td th:text="${usuario.email}"></td>
-            <td th:text="${usuario.phone}"></td>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.idUser}"></td>
+            <td th:text="${user.document}"></td>
+            <td th:text="${user.age}"></td>
+            <td th:text="${user.nameUser}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.phone}"></td>
             <td>
-                <img th:if="${usuario.profilePicture != null}" th:src="${usuario.profilePicture}" alt="Imagen de Perfil" style="max-width: 100px;">
+                <img th:if="${user.profilePicture != null}" th:src="${user.profilePicture}" alt="Imagen de Perfil" style="max-width: 100px;">
             </td>
         </tr>
         </tbody>

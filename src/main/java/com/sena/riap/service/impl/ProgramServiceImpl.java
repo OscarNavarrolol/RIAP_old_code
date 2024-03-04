@@ -1,14 +1,21 @@
 package com.sena.riap.service.impl;
 
 import com.sena.riap.entities.Program;
+import com.sena.riap.repository.ProgramRepository;
 import com.sena.riap.service.ProgramService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class ProgramServiceImpl implements ProgramService {
+
+    @Autowired
+    private ProgramRepository programRepository;
+
     @Override
     public List<Program> getProgram() {
-        return null;
+        return programRepository.findAll();
     }
 
     @Override

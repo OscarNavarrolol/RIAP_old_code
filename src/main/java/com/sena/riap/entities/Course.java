@@ -21,9 +21,9 @@ public class Course {
     @NotNull(message = "Number cannot be null")
     private Integer number;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_program")
-    private Program program;
+    //  @ManyToOne(fetch = FetchType.LAZY)
+    @Column(name = "id_program")
+    private Long idProgram;
 
 
 }

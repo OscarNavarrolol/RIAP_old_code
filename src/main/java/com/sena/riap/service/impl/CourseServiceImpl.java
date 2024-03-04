@@ -1,15 +1,21 @@
 package com.sena.riap.service.impl;
 
 import com.sena.riap.entities.Course;
+import com.sena.riap.repository.CourseRepository;
 import com.sena.riap.service.CourseService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class CourseServiceImpl implements CourseService {
+
+    @Autowired
+    private CourseRepository courseRepository;
 
     @Override
     public List<Course> getCourse() {
-        return null;
+        return courseRepository.findAll();
     }
 
     @Override

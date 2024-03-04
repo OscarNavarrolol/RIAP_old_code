@@ -22,7 +22,7 @@ public class UserData {
     @Column(name = "id_user")
     private long idUser;
 
-    @Min(value = 1000, message = "Document number must be greater than or equal to 1000")
+   // @Min(value = 1000, message = "Document number must be greater than or equal to 1000")
     @Column(name = "document_number")
     private String document;
 
@@ -38,7 +38,7 @@ public class UserData {
     private String email;
 
     @NotBlank(message = "Phone cannot be blank")
-    @Size(min = 10, max = 10, message = "Phone number must be exactly 10 digits")
+    // @Size(min = 10, max = 10, message = "Phone number must be exactly 10 digits")
     private String phone;
 
     @Column(name = "role_user")

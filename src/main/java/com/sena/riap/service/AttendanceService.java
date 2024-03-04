@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface AttendanceService {
 
-    public List<Attendance> getEvents();
+    public List<Attendance> getAttendance();
 
     public Attendance saveAttendance(Attendance Attendance);
 
