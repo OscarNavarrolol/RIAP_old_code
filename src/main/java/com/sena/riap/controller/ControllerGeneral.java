@@ -11,32 +11,24 @@ import java.util.List;
 
 @Controller
 @RequestMapping({"/","/homepage"})
-public class controllersupreme {
+public class ControllerGeneral {
 
     @Autowired
     private UserDataService userDataService;
 
-    @GetMapping("/users")
-    public String listarUsuarios(Model model) {
-        List<UserData> usersData = userDataService.getUserData();
-        model.addAttribute("usuarios", usersData);
-        return "admin/principal/list_users";
-    }
-
     @GetMapping("/aboutUs")
     public String getAboutUsPage(){
-        return "admin/principal/about_us";
-    }
-/*
-    @GetMapping("/aboutUs")
-    public String getLoginPage(){
-        return "admin/principal/about_us";
+        return "general/aboutUs";
     }
 
- */
+    @GetMapping("/login")
+    public String getLoginPage(){
+        return "general/login";
+    }
+
     @GetMapping
     public String getHomePage(){
-        return "admin/principal/homepage";
+        return "general/homePage";
     }
 
 }
