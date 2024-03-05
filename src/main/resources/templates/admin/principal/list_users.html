@@ -36,6 +36,102 @@
         </tr>
         </tbody>
     </table>
+    <h2>Secomd</h2>
+    th:href="@{/events/}"
+    <table class="table table-dark">
+        <thead class="thead-dark">
+        <tr>
+            <th>idUserCourse</th>
+            <th>idCourse</th>
+            <th>IdUser</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="userCourse : ${userCourse}">
+            <td th:text="${userCourse.idUserCourse}"></td>
+            <td th:text="${userCourse.idCourse}"></td>
+            <td th:text="${userCourse.IdUser}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <h2>Third</h2>
+
+    <table class="table table-dark">
+        <thead class="thead-dark">
+        <tr>
+            <th>idProgram</th>
+            <th>name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="program : ${program}">
+            <td th:text="${program.idProgram}"></td>
+            <td th:text="${program.name}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Fourth</h2>
+    <table class="table table-dark">
+        <thead class="thead-dark">
+        <tr>
+            <th>idEvent</th>
+            <th>date</th>
+            <th>objective</th>
+            <th>startTime</th>
+            <th>endTime</th>
+            <th>location</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="event : ${event}">
+            <td th:text="${event.idEvent}"></td>
+            <td th:text="${event.date}"></td>
+            <td th:text="${event.objective}"></td>
+            <td th:text="${event.startTime}"></td>
+            <td th:text="${event.endTime}"></td>
+            <td th:text="${event.location}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>Fifth</h2>
+    <table class="table table-dark">
+        <thead class="thead-dark">
+        <tr>
+            <th>idCourse</th>
+            <th>number</th>
+            <th>idProgram</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="course : ${course}">
+            <td th:text="${course.idCourse}"></td>
+            <td th:text="${course.number}"></td>
+            <td th:text="${course.idProgram}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2>sixth</h2>
+    <table class="table table-dark">
+        <thead class="thead-dark">
+        <tr>
+            <th>idAttendance</th>
+            <th>idEvent</th>
+            <th>idUser</th>
+            <th>attendanceTime</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="attendance : ${attendance}">
+            <td th:text="${attendance.idAttendance}"></td>
+            <td th:text="${attendance.idEvent}"></td>
+            <td th:text="${attendance.idUser}"></td>
+            <td th:text="${attendance.attendanceTime}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 
 </body>
