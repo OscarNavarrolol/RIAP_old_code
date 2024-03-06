@@ -21,7 +21,7 @@ public class UserCourse {
     private Long idCourse;
 
     // @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_user")
+    @Column(name = "id_user")
     private Long IdUser;
 
 }

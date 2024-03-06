@@ -4,12 +4,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuarios</title>
     <link rel="stylesheet" href="style.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
 <div class="container mt-4">
     <h1>Lista de Usuarios</h1>
-
+    <div id="tableContainer">
     <table class="table table-dark">
         <thead class="thead-dark">
         <tr>
@@ -36,8 +37,9 @@
         </tr>
         </tbody>
     </table>
+
     <h2>Secomd</h2>
-    th:href="@{/events/}"
+
     <table class="table table-dark">
         <thead class="thead-dark">
         <tr>
@@ -132,7 +134,59 @@
         </tr>
         </tbody>
     </table>
+    </div>
+    <button id="showUserCourse">Mostrar Cursos de Usuario</button>
+    <button id="showProgram">Mostrar Programas</button>
+    <button id="showAttendance">Mostrar showAttendance</button>
+    <button id="showUserData">Mostrar showUserData</button>
+    <button id="showEventData">Mostrar showEventData</button>
+    <button id="showCourse">Mostrar showCourse</button>
 </div>
+<script>
+    document.getElementById("showUserCourse").addEventListener("click", function() {
+        fetch('/userCourse/listUserCourse')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('tableContainer').innerHTML = data;
+            });
+    });
 
+    document.getElementById("showProgram").addEventListener("click", function() {
+        fetch('/program/listProgram')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('tableContainer').innerHTML = data;
+            });
+    });
+
+    document.getElementById("showAttendance").addEventListener("click", function() {
+        fetch('/attendance/listAttendance')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('tableContainer').innerHTML = data;
+            });
+    });
+    document.getElementById("showUserData").addEventListener("click", function() {
+        fetch('/userData/users')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('tableContainer').innerHTML = data;
+            });
+    });
+    document.getElementById("showEventData").addEventListener("click", function() {
+        fetch('/eventData/listEvent')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('tableContainer').innerHTML = data;
+            });
+    });
+    document.getElementById("showCourse").addEventListener("click", function() {
+        fetch('/course/listCourse')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('tableContainer').innerHTML = data;
+            });
+    });
+</script>
 </body>
 </html>
