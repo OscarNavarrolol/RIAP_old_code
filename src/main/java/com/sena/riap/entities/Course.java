@@ -19,6 +19,7 @@ public class Course {
     private Long idCourse;
 
     @NotNull(message = "Number cannot be null")
+    @Column(name = "number_course")
     private Integer number;
 
     //  @ManyToOne(fetch = FetchType.LAZY)
