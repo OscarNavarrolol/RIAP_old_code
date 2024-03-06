@@ -136,59 +136,60 @@
         </tbody>
     </table>
 
-    <button id="showUserCourse">Mostrar Cursos de Usuario</button>
-    <button id="showProgram">Mostrar Programas</button>
-    <button id="showAttendance">Mostrar showAttendance</button>
-    <button id="showUserData">Mostrar showUserData</button>
-    <button id="showEventData">Mostrar showEventData</button>
-    <button id="showCourse">Mostrar showCourse</button>
+    <button id="showUserCourse" class="showDataButton">Mostrar Cursos de Usuario</button>
+    <button id="showProgram" class="showDataButton">Mostrar Programas</button>
+    <button id="showAttendance" class="showDataButton">Mostrar showAttendance</button>
+    <button id="showUserData" class="showDataButton">Mostrar showUserData</button>
+    <button id="showEventData" class="showDataButton">Mostrar showEventData</button>
+    <button id="showCourse" class="showDataButton">Mostrar showCourse</button>
     </div>
 </div>
 <script>
-    document.getElementById("showUserCourse").addEventListener("click", function() {
-        fetch('/userCourse/listUserCourse')
-            .then(response => response.text())
+    function fetchData(url) {
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                return response.text();
+            })
             .then(data => {
                 document.getElementById('tableContainer').innerHTML = data;
+                assignClickEvents();
+            })
+            .catch(error => {
+                console.error('Error:', error);
             });
-    });
+    }
 
-    document.getElementById("showProgram").addEventListener("click", function() {
-        fetch('/program/listProgram')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('tableContainer').innerHTML = data;
-            });
-    });
+    function assignClickEvents() {
+        document.getElementById("showUserCourse").addEventListener("click", function() {
+            fetchData('/userCourse/listUserCourse');
+        });
 
-    document.getElementById("showAttendance").addEventListener("click", function() {
-        fetch('/attendance/listAttendance')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('tableContainer').innerHTML = data;
-            });
-    });
-    document.getElementById("showUserData").addEventListener("click", function() {
-        fetch('/userData/users')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('tableContainer').innerHTML = data;
-            });
-    });
-    document.getElementById("showEventData").addEventListener("click", function() {
-        fetch('/eventData/listEvent')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('tableContainer').innerHTML = data;
-            });
-    });
-    document.getElementById("showCourse").addEventListener("click", function() {
-        fetch('/course/listCourse')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('tableContainer').innerHTML = data;
-            });
-    });
+        document.getElementById("showProgram").addEventListener("click", function() {
+            fetchData('/program/listProgram');
+        });
+
+        document.getElementById("showAttendance").addEventListener("click", function() {
+            fetchData('/attendance/listAttendance');
+        });
+
+        document.getElementById("showUserData").addEventListener("click", function() {
+            fetchData('/users');
+        });
+
+        document.getElementById("showEventData").addEventListener("click", function() {
+            fetchData('/eventData/listEvent');
+        });
+
+        document.getElementById("showCourse").addEventListener("click", function() {
+            fetchData('/course/listCourse');
+        });
+    }
+
+    assignClickEvents();
 </script>
+
 </body>
 </html>
