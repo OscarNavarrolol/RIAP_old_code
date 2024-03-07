@@ -10,9 +10,9 @@
 <body>
 <div class="container mt-4">
     <div id="tableContainer">
-    <h1>Lista de Usuarios</h1>
+    <h1 th:if="${users != null}">Lista de Usuarios</h1>
 
-    <table class="table table-dark">
+    <table class="table table-dark" th:if="${users != null}">
         <thead class="thead-dark">
         <tr>
             <th>ID</th>
@@ -39,9 +39,9 @@
         </tbody>
     </table>
 
-    <h2>Secomd</h2>
+    <h2 th:if="${userCourse != null}">Secomd</h2>
 
-    <table class="table table-dark">
+    <table class="table table-dark" th:if="${userCourse != null}">
         <thead class="thead-dark">
         <tr>
             <th>idUserCourse</th>
@@ -57,9 +57,9 @@
         </tr>
         </tbody>
     </table>
-    <h2>Third</h2>
+    <h2 th:if="${program != null}">Third</h2>
 
-    <table class="table table-dark">
+    <table class="table table-dark" th:if="${program != null}">
         <thead class="thead-dark">
         <tr>
             <th>idProgram</th>
@@ -74,8 +74,8 @@
         </tbody>
     </table>
 
-    <h2>Fourth</h2>
-    <table class="table table-dark">
+    <h2 th:if="${event != null}">Fourth</h2>
+    <table class="table table-dark" th:if="${event != null}">
         <thead class="thead-dark">
         <tr>
             <th>idEvent</th>
@@ -98,8 +98,8 @@
         </tbody>
     </table>
 
-    <h2>Fifth</h2>
-    <table class="table table-dark">
+    <h2 th:if="${course != null}">Fifth</h2>
+    <table class="table table-dark" th:if="${course != null}">
         <thead class="thead-dark">
         <tr>
             <th>idCourse</th>
@@ -116,8 +116,8 @@
         </tbody>
     </table>
 
-    <h2>sixth</h2>
-    <table class="table table-dark">
+    <h2 th:if="${attendance != null}">sixth</h2>
+    <table class="table table-dark" th:if="${attendance != null}">
         <thead class="thead-dark">
         <tr>
             <th>idAttendance</th>

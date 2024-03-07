@@ -18,6 +18,11 @@ public class ControllerUserData {
     @Autowired
     private UserDataService userDataService;
 
+    @GetMapping("/tables")
+    public String tablesGeneral() {
+        return "admin/principal/list_users";
+    }
+
     @GetMapping("/users")
     public String listarUsers(Model model) {
         List<UserData> usersData = userDataService.getUserData();
