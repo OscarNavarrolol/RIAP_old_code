@@ -20,7 +20,7 @@ public class ProgramServiceImpl implements ProgramService {
 
     @Override
     public Program saveProgram(Program program) {
-        return null;
+        return programRepository.save(program);
     }
 
     @Override

@@ -10,7 +10,7 @@
 <body>
 <div class="container mt-4">
     <div id="tableContainer">
-    <h1 th:if="${users != null}">Lista de Usuarios</h1>
+    <h1 th:if="${users != null}">Lista de Users</h1>
 
     <table class="table table-dark" th:if="${users != null}">
         <thead class="thead-dark">
@@ -35,8 +35,15 @@
             <td>
                 <img th:if="${user.profilePicture != null}" th:src="${user.profilePicture}" alt="Imagen de Perfil" style="max-width: 100px;">
             </td>
+            <td>
+                <a th:href="@{/editUser/{idUser}(idUser=${user.idUser})}">Edit</a>
+                <a th:href="@{/delete/{idUser}(idUser=${user.idUser})}" class="delete">delete</a>
+            </td>
         </tr>
         </tbody>
+
+        <a th:href="@{/newUserData}">NEW USER</a>
+
     </table>
 
     <h2 th:if="${userCourse != null}">Secomd</h2>

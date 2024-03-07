@@ -10,7 +10,7 @@ public interface UserCourseService {
 
     public List<UserCourse> getUserCourse();
 
-    public UserCourse saveUserCourse(Course course);
+    public UserCourse saveUserCourse(UserCourse userCourse);
 
     public UserCourse getUserCourseById(Long id);
 

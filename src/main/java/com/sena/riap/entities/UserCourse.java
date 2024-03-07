@@ -1,12 +1,8 @@
 package com.sena.riap.entities;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+
+
 @Entity
 @Table(name = "user_course")
 public class UserCourse {
@@ -24,4 +20,27 @@ public class UserCourse {
     @Column(name = "id_user")
     private Long IdUser;
 
+    public Long getIdUserCourse() {
+        return idUserCourse;
+    }
+
+    public void setIdUserCourse(Long idUserCourse) {
+        this.idUserCourse = idUserCourse;
+    }
+
+    public Long getIdCourse() {
+        return idCourse;
+    }
+
+    public void setIdCourse(Long idCourse) {
+        this.idCourse = idCourse;
+    }
+
+    public Long getIdUser() {
+        return IdUser;
+    }
+
+    public void setIdUser(Long idUser) {
+        IdUser = idUser;
+    }
 }

@@ -20,8 +20,8 @@ public class UserCourseServiceImpl implements UserCourseService {
     }
 
     @Override
-    public UserCourse saveUserCourse(Course course) {
-        return null;
+    public UserCourse saveUserCourse(UserCourse userCourse) {
+        return userCourseRepository.save(userCourse);
     }
 
     @Override

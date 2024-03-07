@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Usuario</title>
+    <link rel="stylesheet" href="/css/styleFormNewUser.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="logo">Create User</h1>
+    <form class="user-form" action="/newUserData" method="post">
+        <div class="form-group">
+            <label for="idUser">ID:</label>
+            <input type="text" id="idUser" name="idUser" required>
+        </div>
+        <div class="form-group">
+            <label for="document">Document:</label>
+            <input type="text" id="document" name="document" required>
+        </div>
+        <div class="form-group">
+            <label for="age">age:</label>
+            <input type="number" id="age" name="age" required>
+        </div>
+        <div class="form-group">
+            <label for="nameUser">Name:</label>
+            <input type="text" id="nameUser" name="nameUser" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">phone:</label>
+            <input type="text" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+            <label for="roleUser">Role:</label>
+            <input type="text" id="roleUser" name="roleUser">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="profilePicture">Image profile:</label>
+            <input type="text" id="profilePicture" name="profilePicture">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn-submit">Create user</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

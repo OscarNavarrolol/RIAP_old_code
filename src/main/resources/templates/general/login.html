@@ -1,49 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,900;1,300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/homepage_style.css">
-    <title>Riap Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/styleLogin.css">
 </head>
 <body>
-<nav class="container ">
-    <span class="logo">RIAP</span>
-</nav>
-<main>
-    <div class="hero-section">
-        <h1>Intelligent in-person attendance recognition (RIAP)</h1>
-        <button class="btn">Learn More</button>
-    </div>
-    <!-- ---cards---- -->
-
-    <div class="card-section">
-
-        <p class="card card-light">
-                <span class="icon-span"><img width="32" src="./assets/icons-bulb.png" alt="" />
-                </span>
-            <span class="desc">Innovation ideas, stylish, design for Home & Business</span>
-            <span class="line">
-                    <svg width="100" height="30" viewBox="0 0 160 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="145" cy="15" r="15" fill="white" />
-                        <path d="M1 15L145 15.5" stroke="white" stroke-width="3" />
-                    </svg>
-                </span>
-        </p>
-        <p class="card card-puzzle">
-                <span class="icon-span"><img width="32" src="./assets/icons-puzzle.png" alt="" />
-                </span>
-            <span class="desc">We create your space better based on your own idea</span>
-            <span class="line">
-                    <svg width="100" height="30" viewBox="0 0 160 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="145" cy="15" r="15" fill="white" />
-                        <path d="M1 15L145 15.5" stroke="white" stroke-width="3" />
-                    </svg>
-                </span>
-    </div>
-</main>
-
+<div class="container">
+    <h1 class="logo">Login</h1>
+    <form class="login-form">
+        <div class="form-group">
+            <label for="documento">Documento:</label>
+            <input type="text" id="documento" name="documento">
+        </div>
+        <div class="form-group">
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena">
+        </div>
+        <div class="form-group">
+            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn-login">Iniciar sesión</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>

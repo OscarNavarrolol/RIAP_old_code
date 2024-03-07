@@ -20,7 +20,7 @@ public class EventDataServiceImpl implements EventDataService {
 
     @Override
     public EventData saveEventData(EventData eventData) {
-        return null;
+        return eventDataRepository.save(eventData);
     }
 
     @Override

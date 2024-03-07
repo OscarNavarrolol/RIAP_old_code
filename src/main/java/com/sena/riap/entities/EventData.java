@@ -5,14 +5,9 @@ import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+
 @Entity
 @Table(name = "event_data")
 public class EventData {
@@ -40,4 +35,52 @@ public class EventData {
 
     @NotBlank(message = "location cannot be blank")
     private String location;
+
+    public Long getIdEvent() {
+        return idEvent;
+    }
+
+    public void setIdEvent(Long idEvent) {
+        this.idEvent = idEvent;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public String getObjective() {
+        return objective;
+    }
+
+    public void setObjective(String objective) {
+        this.objective = objective;
+    }
+
+    public LocalDate getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(LocalDate startTime) {
+        this.startTime = startTime;
+    }
+
+    public LocalDate getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(LocalDate endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 }
