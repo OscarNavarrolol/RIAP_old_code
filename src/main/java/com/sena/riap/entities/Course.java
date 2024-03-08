@@ -2,6 +2,7 @@ package com.sena.riap.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 
 @Entity
@@ -14,6 +15,7 @@ public class Course {
     private Long idCourse;
 
     @NotNull(message = "Number cannot be null")
+    @Size(max = 10)
     @Column(name = "number_course")
     private Integer number;
 

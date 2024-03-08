@@ -22,7 +22,7 @@ public class EventData {
     private LocalDate date;
 
     @NotBlank(message = "Objective cannot be blank")
-    @Size(min = 4, message = "Objective length must be at least 4 characters")
+    @Size(max = 255,message = "The length of the objective must be a maximum of 255 characters")
     private String objective;
 
     @Column(name = "start_time")
@@ -34,6 +34,7 @@ public class EventData {
     private LocalDate endTime;
 
     @NotBlank(message = "location cannot be blank")
+    @Size(max = 100,message = "The length of the location must be a maximum of 255 characters")
     private String location;
 
     public Long getIdEvent() {

@@ -18,7 +18,7 @@ public class Program {
     private Long idProgram;
 
     @NotBlank(message = "Name cannot be blank")
-    // @Size(min = 3, message = "Name length must be greater than or equal to 3 characters")
+    @Size(max = 60, message = "The length of the name must be a maximum of 60 characters")
     @Column(name = "name_program")
     private String name;
 
