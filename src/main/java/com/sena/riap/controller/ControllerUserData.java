@@ -60,8 +60,8 @@ public class ControllerUserData {
     }
 
     @GetMapping("/editUser/{idUser}")
-    public String updateUserData (@PathVariable Long idUser, @ModelAttribute UserData userData, Model model){
-        model.addAttribute("userData",userDataService.getUserDataById(idUser));  // userData
+    public String updateUserData (@PathVariable Long idUser, Model model){
+        model.addAttribute("userData",userDataService.getUserDataById(idUser)); // userData
         model.addAttribute("action","/editUser/" + idUser);
         return "admin/principal/formNewUser";
     }
