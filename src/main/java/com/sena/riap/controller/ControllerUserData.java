@@ -48,8 +48,8 @@ public class ControllerUserData {
     // VAINAS MIA No TOCAR
     @GetMapping("/newUserData")
     public String createNewUser(Model model){
-        model.addAttribute("newUserData",new UserData());
-        // model.addAttribute("action","");
+        model.addAttribute("userData",new UserData());
+        model.addAttribute("action","");
         return "admin/principal/formNewUser";
     }
 
@@ -61,8 +61,8 @@ public class ControllerUserData {
 
     @GetMapping("/editUser/{idUser}")
     public String updateUserData (@PathVariable Long idUser, @ModelAttribute UserData userData, Model model){
-        model.addAttribute("userData",userData);
-        model.addAttribute("accion","/editUser/" + idUser);
+        model.addAttribute("userData",userDataService.getUserDataById(idUser));  // userData
+        model.addAttribute("action","/editUser/" + idUser);
         return "admin/principal/formNewUser";
     }
 

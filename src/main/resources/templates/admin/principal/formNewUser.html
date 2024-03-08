@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,45 +9,45 @@
 <body>
 <div class="container">
     <h1 class="logo">Create User</h1>
-    <form class="user-form" action="/newUserData" method="post">
-        <div class="form-group">
+    <form class="userForm" th:object="${userData}" th:action="${action}" method="post">
+        <div class="formGroup">
             <label for="idUser">ID:</label>
-            <input type="text" id="idUser" name="idUser" required>
+            <input type="text" id="idUser" name="idUser" th:field="*{idUser}" required>
         </div>
-        <div class="form-group">
+        <div class="formGroup">
             <label for="document">Document:</label>
-            <input type="text" id="document" name="document" required>
+            <input type="text" id="document" name="document" th:value="${userData.document}" required>
         </div>
-        <div class="form-group">
+        <div class="formGroup">
             <label for="age">age:</label>
-            <input type="number" id="age" name="age" required>
+            <input type="number" id="age" name="age" th:value="${userData.age}" required>
         </div>
-        <div class="form-group">
+        <div class="formGroup">
             <label for="nameUser">Name:</label>
-            <input type="text" id="nameUser" name="nameUser" required>
+            <input type="text" id="nameUser" name="nameUser" th:value="${userData.nameUser}" required>
         </div>
-        <div class="form-group">
+        <div class="formGroup">
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" th:value="${userData.email}" required>
         </div>
-        <div class="form-group">
+        <div class="formGroup">
             <label for="phone">phone:</label>
-            <input type="text" id="phone" name="phone" required>
+            <input type="text" id="phone" name="phone" th:value="${userData.phone}" required>
         </div>
-        <div class="form-group">
+        <div class="formGroup">
             <label for="roleUser">Role:</label>
-            <input type="text" id="roleUser" name="roleUser">
+            <input type="text" id="roleUser" name="roleUser" th:value="${userData.roleUser}">
         </div>
-        <div class="form-group">
+        <div class="formGroup">
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" required th:value="${userData.password}">
         </div>
-        <div class="form-group">
+        <div class="formGroup">
             <label for="profilePicture">Image profile:</label>
-            <input type="text" id="profilePicture" name="profilePicture">
+            <input type="text" id="profilePicture" name="profilePicture" th:value="${userData.profilePicture}">
         </div>
-        <div class="form-group">
-            <button type="submit" class="btn-submit">Create user</button>
+        <div class="formGroup">
+            <button type="submit" class="btnSubmit">Create user</button>
         </div>
     </form>
 </div>
