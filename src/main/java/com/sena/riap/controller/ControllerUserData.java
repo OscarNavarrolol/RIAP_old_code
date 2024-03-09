@@ -23,7 +23,7 @@ public class ControllerUserData {
     }
 
     @GetMapping("/users")
-    public String listarUsers(Model model) {
+    public String listUsers(Model model) {
         List<UserData> usersData = userDataService.getUserData();
         model.addAttribute("users", usersData);
         return "admin/principal/list_users";

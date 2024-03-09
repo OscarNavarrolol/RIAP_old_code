@@ -9,8 +9,10 @@
 </head>
 <body>
 <div class="container mt-4">
+
     <div id="tableContainer">
-    <h1 th:if="${users != null}">Lista de Users</h1>
+        <h1>List of tables</h1>
+    <h2 th:if="${users != null}">Lista de Users</h2>
 
     <table class="table table-dark" th:if="${users != null}">
         <thead class="thead-dark">
@@ -109,7 +111,7 @@
     <table class="table table-dark" th:if="${course != null}">
         <thead class="thead-dark">
         <tr>
-            <th>idCourse</th>
+            <th>idCourse   </th>
             <th>number</th>
             <th>idProgram</th>
         </tr>
@@ -127,7 +129,7 @@
     <table class="table table-dark" th:if="${attendance != null}">
         <thead class="thead-dark">
         <tr>
-            <th>idAttendance</th>
+            <th>idAttendance  </th>
             <th>idEvent</th>
             <th>idUser</th>
             <th>attendanceTime</th>
