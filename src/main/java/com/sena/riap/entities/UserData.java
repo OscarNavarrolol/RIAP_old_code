@@ -22,7 +22,7 @@ public class UserData {
     @Column(name = "document_number")
     private String document;
 
-    @Min(value = 0, message = "La edad debe ser mayor que cero")
+    @Min(value = 0, message = "The age entered must be greater than zero")
     private int age;
 
     @NotBlank(message = "Name cannot be blank")

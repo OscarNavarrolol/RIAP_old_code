@@ -10,7 +10,6 @@ import jakarta.validation.constraints.Size;
 public class Course {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_course")
     private Long idCourse;
 

@@ -12,7 +12,6 @@ import java.time.LocalDate;
 @Table(name = "event_data")
 public class EventData {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_event")
     private Long idEvent;
 
