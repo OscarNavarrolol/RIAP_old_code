@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: Poppins, sans-serif;
+    background: var(--purpleBackground_color);
+    color: rgba(255, 255, 255, 0.8);
+    overflow: hidden !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.Circle_Text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+}
+
+.Circle {
+    width: 35rem;
+    height: 35rem;
+    border-radius: 50%;
+    background: var(--purple_color1);
+    box-shadow: var(--purple_color2) 0 0 5px 45px,
+    var(--purple_color3) 0 0 10px 75px,
+    var(--purple_color4) 0 0 10px 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-animation: pulse 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+    -o-animation: pulse 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+    animation: pulse 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: var(--purple_color2) 0 0 5px 45px,
+        var(--purple_color3) 0 0 10px 75px,
+        var(--purple_color4) 0 0 10px 105px;
+    }
+    50% {
+        box-shadow: var(--purple_color2) 0 0 5px 55px,
+        var(--purple_color3) 0 0 10px 95px,
+        var(--purple_color4) 0 0 10px 145px;
+        transform: scale(1.03);
+    }
+}
+
+.Circle h1 {
+    font-size: 12em;
+    margin: 0;
+    color: var(--purpleBackground_color);
+    user-select: none;
+}
+
+.Circle h2 {
+    font-size: 2em;
+    margin: 5px 0;
+    user-select: none;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: #f8f9fa 1px solid;
+    padding: .375rem .75rem;
+    margin: .375rem;
+    font-size: 1em;
+    border-radius: .25rem;
+    color: #f8f9fa;
+    transition: all .5s ease-in-out;
+    user-select: none;
+}
+
+.btn:hover {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+    .Circle {
+        width: 350px;
+        height: 350px;
+        min-width: 350px;
+    }
+
+    .Circle h1 {
+        font-size: 7em;
+    }
+
+    .Circle h2 {
+        font-size: 1.5em;
+    }
+
+    .btn {
+        font-size: 0.825em;
+    }
+}
+
+:root {
+    --purple_color1: #693a77;
+    --purple_color2: #5d3270;
+    --purple_color3: #4f2964;
+    --purple_color4: #42215a;
+    --purpleBackground_color: #2a072a;
+}

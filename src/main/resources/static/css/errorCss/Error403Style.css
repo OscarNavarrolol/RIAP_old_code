@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-family: Poppins, sans-serif;
+    background: var(--blueBackground_color);
+    color: rgba(255, 255, 255, 0.8);
+    overflow: hidden !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.Circle_Text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+}
+
+.Circle {
+    width: 35rem;
+    height: 35rem;
+    border-radius: 50%;
+    background: var(--blue_color1);
+    box-shadow: var(--blue_color2) 0 0 5px 45px,
+    var(--blue_color3) 0 0 10px 75px,
+    var(--blue_color4) 0 0 10px 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-animation: pulse 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+    -o-animation: pulse 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+    animation: pulse 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: var(--blue_color2) 0 0 5px 45px,
+        var(--blue_color3) 0 0 10px 75px,
+        var(--blue_color4) 0 0 10px 105px;
+    }
+    50% {
+        box-shadow: var(--blue_color2) 0 0 5px 55px,
+        var(--blue_color3) 0 0 10px 95px,
+        var(--blue_color4) 0 0 10px 145px;
+        transform: scale(1.03);
+    }
+}
+
+.Circle h1 {
+    font-size: 12em;
+    margin: 0;
+    color: var(--blueBackground_color);
+    user-select: none;
+}
+
+.Circle h2 {
+    font-size: 2em;
+    margin: 5px 0;
+    user-select: none;
+}
+
+
+@media (max-width: 768px) {
+    .Circle {
+        width: 350px;
+        height: 350px;
+        min-width: 350px;
+    }
+
+    .Circle h1 {
+        font-size: 7em;
+    }
+
+    .Circle h2 {
+        font-size: 1.5em;
+    }
+
+}
+
+:root {
+    --blue_color1: #1c87c9;
+    --blue_color2: #1a77b3;
+    --blue_color3: #156291;
+    --blue_color4: #10486a;
+    --blueBackground_color: #07072a;
+}
