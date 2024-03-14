@@ -1,7 +1,6 @@
 package com.sena.riap.controller;
 
 
-import com.sena.riap.entities.Program;
 import com.sena.riap.entities.UserCourse;
 import com.sena.riap.service.UserCourseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ public class ControllerUserCourse {
     public String listUsersCourses (Model model) {
         List<UserCourse> userCourseData = userCourseService.getUserCourse();
         model.addAttribute("userCourse", userCourseData);
-        return "admin/principal/list_users";
+        return "admin/principal/ListUsers";
     }
 
 }

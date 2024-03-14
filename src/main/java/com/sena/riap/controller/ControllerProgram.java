@@ -1,7 +1,6 @@
 package com.sena.riap.controller;
 
 
-import com.sena.riap.entities.EventData;
 import com.sena.riap.entities.Program;
 import com.sena.riap.service.ProgramService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ public class ControllerProgram {
     public String listPrograms (Model model) {
         List<Program> programData = programService.getProgram();
         model.addAttribute("program", programData);
-        return "admin/principal/list_users";
+        return "admin/principal/ListUsers";
     }
 
 }

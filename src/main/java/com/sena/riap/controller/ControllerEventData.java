@@ -1,6 +1,5 @@
 package com.sena.riap.controller;
 
-import com.sena.riap.entities.Course;
 import com.sena.riap.entities.EventData;
 import com.sena.riap.service.EventDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +21,7 @@ public class ControllerEventData {
     public String listEvents (Model model) {
         List<EventData> eventData = eventDataService.getEventData();
         model.addAttribute("event", eventData);
-        return "admin/principal/list_users";
+        return "admin/principal/ListUsers";
     }
 
 

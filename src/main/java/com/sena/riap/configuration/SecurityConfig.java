@@ -12,10 +12,15 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 /*
     @Bean
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        //autenticación en memoria
-        auth.inMemoryAuthentication()
-                .withUser("admin").password("{noop}admin").roles("ADMIN"); // Usar contraseña en texto plano (quite esa monda (malo))
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+            .authorizeRequests()
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            .and()
+            .formLogin()
+                .loginPage("/login")
+                .permitAll();
     }
 
     @Bean

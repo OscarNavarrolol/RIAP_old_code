@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Locale;
 
 @Service
 public class UserDataServiceImpl implements UserDataService {
@@ -51,5 +52,15 @@ public class UserDataServiceImpl implements UserDataService {
     @Override
     public void deleteUserData(Long id) {
         userDataRepository.deleteById(id);
+    }
+
+    @Override
+    public UserData loginUser(String document, String password) {
+        UserData user = userDataRepository.findByDocumentAndPassword(document, password);
+
+        if (user != null && user.getRoleUser().equals("admin")){
+            return user;
+        }
+        return null;
     }
 }

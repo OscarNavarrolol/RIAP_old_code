@@ -17,4 +17,5 @@ public interface UserDataService {
 
     public void deleteUserData(Long id);
 
+    public UserData loginUser(String document, String password);
 }

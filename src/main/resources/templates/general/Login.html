@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +9,17 @@
 <body>
 <div class="container">
     <h1 class="logo">Login</h1>
-    <form class="login-form">
+    <form class="login-form" th:action="@{/userData/users/auth}" method="post">
         <div class="form-group">
-            <label for="documento">Documento:</label>
-            <input type="text" id="documento" name="documento">
+            <label for="document">Documento:</label>
+            <input type="text" id="document" name="document">
         </div>
         <div class="form-group">
-            <label for="contrasena">Contraseña:</label>
-            <input type="password" id="contrasena" name="contrasena">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div th:if="${errorMessage}" class="error-message">
+            <p th:text="${errorMessage}"></p>
         </div>
         <div class="form-group">
             <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>

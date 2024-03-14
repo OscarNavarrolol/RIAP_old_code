@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -19,29 +20,29 @@ public class ControllerUserData {
 
     @GetMapping("/tables")
     public String tablesGeneral() {
-        return "admin/principal/list_users";
+        return "admin/principal/ListUsers";
     }
 
     @GetMapping("/users")
     public String listUsers(Model model) {
         List<UserData> usersData = userDataService.getUserData();
         model.addAttribute("users", usersData);
-        return "admin/principal/list_users";
+        return "admin/principal/ListUsers";
     }
 
     @GetMapping("/aboutUs")
     public String getAboutUsPage(){
-        return "general/aboutUs";
+        return "general/AboutUs";
     }
 
     @GetMapping("/login")
     public String getLoginPage(){
-        return "general/login";
+        return "general/Login";
     }
 
     @GetMapping
     public String getHomePage(){
-        return "general/homePage";
+        return "general/HomePage";
     }
 
 
@@ -50,7 +51,7 @@ public class ControllerUserData {
     public String createNewUser(Model model){
         model.addAttribute("userData",new UserData());
         model.addAttribute("action","");
-        return "admin/principal/formNewUser";
+        return "admin/principal/FormNewUser";
     }
 
     @PostMapping("/newUserData")
@@ -63,7 +64,7 @@ public class ControllerUserData {
     public String updateUserData (@PathVariable Long idUser, Model model){
         model.addAttribute("userData",userDataService.getUserDataById(idUser)); // userData
         model.addAttribute("action","/editUser/" + idUser);
-        return "admin/principal/formNewUser";
+        return "admin/principal/FormNewUser";
     }
 
     @PostMapping("/editUser/{idUser}")
@@ -76,6 +77,25 @@ public class ControllerUserData {
     public String deleteUserData (@PathVariable Long idUser){
         userDataService.deleteUserData(idUser);
         return "redirect:/tables";
+    }
+
+    // @Secured("ROLE_ADMIN")  VAINAS PAL FUTURE
+    @GetMapping("/principal")
+    public String showPrincipalPage() {
+        return "admin/principal/PrincipalAdmin";
+    }
+
+    @PostMapping("/users/auth")
+    public String verifyCredentials(@RequestParam("document") String document, @RequestParam("password") String password, RedirectAttributes redirectAttributes) {
+        UserData user = userDataService.loginUser(document, password);
+
+        if (user != null) {
+            redirectAttributes.addFlashAttribute("users", user);
+            return "redirect:/principal";
+        } else {
+            redirectAttributes.addFlashAttribute("errorMessage", "Incorrect credentials");
+        }
+        return "redirect:/login";
     }
 
 }
