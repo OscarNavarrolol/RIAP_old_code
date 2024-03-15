@@ -35,6 +35,11 @@ public class ControllerUserData {
         return "general/AboutUs";
     }
 
+    @GetMapping("/resetPassword")
+    public String getResetPasswordPage(){
+        return "general/PasswordReset";
+    }
+
     @GetMapping("/login")
     public String getLoginPage(){
         return "general/Login";

@@ -7,7 +7,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 */
-// @Configuration explocion toto no tocal
+// @Configuration
 // @EnableWebSecurity
 public class SecurityConfig {
 /*

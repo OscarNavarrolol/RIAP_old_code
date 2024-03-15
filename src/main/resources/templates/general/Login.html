@@ -1,31 +1,41 @@
-<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
     <link rel="stylesheet" href="/css/styleLogin.css">
+    <title>Login</title>
 </head>
 <body>
 <div class="container">
-    <h1 class="logo">Login</h1>
     <form class="login-form" th:action="@{/userData/users/auth}" method="post">
-        <div class="form-group">
-            <label for="document">Documento:</label>
-            <input type="text" id="document" name="document">
+
+        <h1>Account Login</h1>
+        <div class="element">
+            <div class="imagen">
+                <img src="imagens/user-solid.svg" alt="">
+            </div>
+            <div class="data">
+                <input type="text" id="document" name="document" required="true" placeholder="User">
+            </div>
         </div>
-        <div class="form-group">
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password">
+        <div class="element">
+            <div class="imagen">
+                <img src="imagens/lock-solid.svg" alt="">
+            </div>
+            <div class="data">
+                <input type="password" id="password" name="password" required="true" placeholder="Password">
+            </div>
         </div>
+        <div class="button-send">
+            <input type="submit" id="button" name="button" value="Login">
+        </div>
+        <hr>
+        <a class="forget-password" th:href="@{/resetPassword}">Did you forget your password?</a>
+        <br>
+        <br>
+        <br>
         <div th:if="${errorMessage}" class="error-message">
             <p th:text="${errorMessage}"></p>
-        </div>
-        <div class="form-group">
-            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn-login">Iniciar sesión</button>
         </div>
     </form>
 </div>

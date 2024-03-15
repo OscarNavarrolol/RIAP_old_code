@@ -1,73 +1,112 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Montserrat;
+:root{
+    --bottun_web:#00AF00;
+    --color_black:#202124;
+    --color_white:#F1F0EF;
+    --effect:rgba(54, 54, 54, 0.3);
+    --border:solid 1px :rgba:(255,255,255,0.5);
+    --border_rount:25px;
 }
 
-body {
-    background: url("https://images.squarespace-cdn.com/content/v1/5ac2ddf285ede15e39a57666/ae2896cb-3768-41bb-8bc3-7e5298dfcd0b/Design-Anthology-2022-04+Light+_+Dark+apartment%2C+Tainan+-+Degree+Design-Degree_Design_BBBLACK-213.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
+body{
+    background-color: var(--color_black);
+    color: white;
+    font-family: "Roboto", sans-serif;
 }
 
-.container {
+.container{
+    background-color: var(--effect);
+    backdrop-filter: blur(20px);
+    width: 390px;
+    height: 350px;
+    position: relative;
+    top: 25%;
+    border: var(--border) white;
+    border-radius: var(--border_rount);
+    text-align: center;
+    margin: auto;
+    box-shadow: 0px 0px 10px 0px rgb(25, 204, 19);
+    overflow: none;
+}
+
+h1{
+    margin: 0 0 20px 0;
+    padding: 15px;
+    border-radius: 24px 24px 0px 0px;
+    background-color: rgb(44, 184, 31);
+    box-shadow: 0 0 4px 0px;
+}
+
+.element{
+    padding: 15px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 2rem 3rem;
-    font-size: 1.2rem;
-    color: rgb(239, 225, 225);
 }
 
-.logo {
-    font-size: 2rem;
-    font-weight: bold;
-    width: 100px;
-    line-height: 1.1;
+.imagen{
+    width: 25%;
+    text-align: right;
 }
 
-.login-form {
-    background: rgba(255, 255, 255, 0.6);
-    padding: 2rem;
-    border-radius: 10px;
+.data{
+    width: 75%;
+    text-align: left;
 }
 
-.form-group {
-    margin-bottom: 1rem;
+img{
+    background-color: #202020;
+    border-radius: 5px 0px 0px 5px ;
+    padding: 8.5px 12px;
+    width: 20px;
+    height: 22px;
 }
 
-label {
-    color: #ffffff;
+#password,#email,#document,#code{ 
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    border: var(--border);
+    border-radius: 0px 5px 5px 0px; 
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    width: 80%;
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+.button-send{
+    padding: 15px 0px 15px 0px ;
 }
 
-.forgot-password {
-    color: #ffffff;
+#button{
+    background-color: var(--color_white);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border_rount);
+    border: var(--border);
+    color: black;
+    width: 25%;
+    padding: 12px;
+}
+
+#button:hover{
+    color: white;
+    transition: 0.3s;
+    background-color: var(--bottun_web);
+    box-shadow: 0px 0px 5px 1px rgb(0, 209, 35);
+}
+
+hr{
+    width: 80%;
+    padding: 0;
+    margin: 0 auto 15px auto;
+    background-color: white;
+}
+
+.forget-password,.long-in{
+    color: white;
     text-decoration: none;
 }
 
-.btn-login {
-    background: none;
-    border: 4px solid rgb(226, 219, 219);
-    border-radius: 5rem;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: rgb(233, 220, 220);
-    padding: 1rem 3rem;
-    cursor: pointer;
+.forget-password:hover{
+    color: #00AF00;
 }
 
-.btn-login:hover {
-    background: rgb(226, 219, 219);
-    color: #000;
+.long-in:hover{
+    color: #00AF00;
 }
