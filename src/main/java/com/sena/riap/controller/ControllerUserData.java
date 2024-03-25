@@ -85,7 +85,9 @@ public class ControllerUserData {
 
     // @Secured("ROLE_ADMIN")  VAINAS PAL FUTURE
     @GetMapping("/principal")
-    public String showPrincipalPage() {
+    public String showPrincipalPage(Model model) {
+        UserData userStarted = userDataService.getLoggedInUser();
+        model.addAttribute("users", userStarted );
         return "admin/principal/PrincipalAdmin";
     }
 

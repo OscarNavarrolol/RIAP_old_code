@@ -13,6 +13,8 @@ import java.util.Locale;
 @Service
 public class UserDataServiceImpl implements UserDataService {
 
+    private UserData loggedInUser;
+
     @Autowired
     private UserDataRepository userDataRepository;
 
@@ -59,8 +61,14 @@ public class UserDataServiceImpl implements UserDataService {
         UserData user = userDataRepository.findByDocumentAndPassword(document, password);
 
         if (user != null && user.getRoleUser().equals("admin")){
+            loggedInUser = user; // users logged in the software
             return user;
         }
         return null;
+    }
+
+    @Override
+    public UserData getLoggedInUser() {
+        return loggedInUser;
     }
 }
