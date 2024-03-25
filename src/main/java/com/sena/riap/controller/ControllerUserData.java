@@ -1,6 +1,5 @@
 package com.sena.riap.controller;
 
-
 import com.sena.riap.entities.UserData;
 import com.sena.riap.service.UserDataService;
 import org.springframework.beans.factory.annotation.Autowired;
