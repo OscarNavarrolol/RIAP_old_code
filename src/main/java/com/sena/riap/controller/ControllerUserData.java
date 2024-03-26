@@ -91,7 +91,7 @@ public class ControllerUserData {
         return "admin/principal/PrincipalAdmin";
     }
 
-    @PostMapping("/users/auth")
+    @PostMapping("/auth")
     public String verifyCredentials(@RequestParam("document") String document, @RequestParam("password") String password, RedirectAttributes redirectAttributes) {
         UserData user = userDataService.loginUser(document, password);
 
@@ -103,5 +103,6 @@ public class ControllerUserData {
         }
         return "redirect:/login";
     }
+
 
 }

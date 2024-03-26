@@ -46,12 +46,42 @@ nav ul li a {
     text-decoration: none;
 }
 
-main {
-    padding: 20px;
+.actionsUser {
+    width: 30%;
+    margin: 0;
+    padding: 40px;
+    width: 30%;
+    background-color: #bfe2e9;
+    text-align: center;
+    border-radius: 13px;
 }
 
-section {
-    margin-bottom: 20px;
+.actionsUser input[type="button"] {
+    display: block;
+    margin: 0 auto 30px;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 13px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    font-size: 16px;
+}
+
+.actionsUser input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+.recentActivities {
+    padding: 40px;
+    margin: 0;
+    width: 30%;
+    background-color: #bfe2e9;
+    text-align: center;
+    border-radius: 13px;
+    font-weight: bold;
 }
 
 footer {

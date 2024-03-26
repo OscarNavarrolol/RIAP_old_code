@@ -14,7 +14,6 @@
     <nav>
         <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Profile</a></li>
             <li><a href="#">Settings</a></li>
             <li><a href="#">Logout</a></li>
         </ul>
@@ -22,14 +21,18 @@
 </header>
 
 <main>
-    <section>
-        <h2>Personal Information</h2>
-        <p>Name: [User Name]</p>
-        <p>Email: [email@example.com]</p>
+    <section class="actionsUser">
+        <a th:href="@{/newUserData}"><input type="button" value="ATTENDANCE"></a>
+        <a th:href="@{/eventData/createEvent}"><input type="button" value="EVENT"></a>
     </section>
-
-    <section>
+    <br>
+    <section class="recentActivities">
         <h2>Recent Activities</h2>
+        <p>CREO EVENTO PARA APRENDICES FICHA 284930</p>
+        <p>CREO EVENTO PARA APRENDICES FICHA 284933</p>
+        <p>ACTUALIZO EVENTO PARA APRENDICES FICHA 284930</p>
+        <p>ELIMINO EVENTO PARA APRENDICES FICHA 293821</p>
+        <p>CREO EVENTO PARA APRENDICES FICHA 282230</p>
     </section>
 </main>
 
