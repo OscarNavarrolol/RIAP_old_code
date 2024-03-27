@@ -13,16 +13,16 @@
     </div>
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a th:href="@{/userData/principal}">Home</a></li>
             <li><a href="#">Settings</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><a th:href="@{/logout}">Logout</a></li>
         </ul>
     </nav>
 </header>
 
 <main>
     <section class="actionsUser">
-        <a th:href="@{/newUserData}"><input type="button" value="ATTENDANCE"></a>
+        <a th:href="@{#}"><input type="button" value="ATTENDANCE"></a>
         <a th:href="@{/eventData/createEvent}"><input type="button" value="EVENT"></a>
     </section>
     <br>

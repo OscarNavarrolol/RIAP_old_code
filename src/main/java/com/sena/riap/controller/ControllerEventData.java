@@ -37,7 +37,7 @@ public class ControllerEventData {
     @PostMapping("/createEvent")
     public String createNewEvent(@ModelAttribute EventData eventData){
         eventDataService.saveEventData(eventData);
-        return "admin/principal/CreateEvent";
+        return "redirect:/userData/principal";
     }
 
 

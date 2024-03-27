@@ -104,5 +104,9 @@ public class ControllerUserData {
         return "redirect:/login";
     }
 
+    @GetMapping("/logout")
+    public String logout() {
+        return "redirect:/login";
+    }
 
 }

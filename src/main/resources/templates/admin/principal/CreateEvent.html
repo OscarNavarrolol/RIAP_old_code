@@ -12,26 +12,26 @@
     <form class="userForm" th:object="${eventData}" th:action="${action}" method="post">
         <div class="formGroup">
             <label for="idEvent">ID:</label>
-            <input type="text" id="idEvent" name="idEvent" th:field="*{idEvent}" required>
+            <input type="number" id="idEvent" name="idEvent" th:value="${eventData.idEvent}" required>
         </div>
         <div class="formGroup">
-            <label for="date">Document:</label>
-            <input type="text" id="date" name="date" th:value="${eventData.date}" required>
+            <label for="date">date:</label>
+            <input type="date" id="date" name="date" th:value="${eventData.date}" required>
         </div>
         <div class="formGroup">
-            <label for="objective">age:</label>
-            <input type="number" id="objective" name="objective" th:value="${eventData.objective}" required>
+            <label for="objective">objective:</label>
+            <input type="text" id="objective" name="objective" th:value="${eventData.objective}" required>
         </div>
         <div class="formGroup">
-            <label for="startTime">Name:</label>
-            <input type="text" id="startTime" name="startTime" th:value="${eventData.startTime}" required>
+            <label for="startTime">startTime:</label>
+            <input type="time" id="startTime" name="startTime" th:value="${eventData.startTime}" required>
         </div>
         <div class="formGroup">
-            <label for="endTime">Email:</label>
-            <input type="email" id="endTime" name="endTime" th:value="${eventData.endTime}" required>
+            <label for="endTime">endTime:</label>
+            <input type="time" id="endTime" name="endTime" th:value="${eventData.endTime}" required>
         </div>
         <div class="formGroup">
-            <label for="location">phone:</label>
+            <label for="location">location:</label>
             <input type="text" id="location" name="location" th:value="${eventData.location}" required>
         </div>
         <div class="formGroup">
