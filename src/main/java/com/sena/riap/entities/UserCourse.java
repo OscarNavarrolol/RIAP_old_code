@@ -40,6 +40,6 @@ public class UserCourse {
     }
 
     public void setIdUser(Long idUser) {
-        idUser = idUser;
+        this.idUser = idUser;
     }
 }
