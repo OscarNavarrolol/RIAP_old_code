@@ -16,4 +16,6 @@ public interface CourseService {
 
     public void deleteCourse(Long id);
 
+    List<Integer> getCoursesByUser(Long userId);
+
 }

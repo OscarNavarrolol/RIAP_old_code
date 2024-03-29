@@ -10,9 +10,10 @@
 <div class="container">
     <h1 class="logo">Create EVENT</h1>
     <form class="userForm" th:object="${eventData}" th:action="${action}" method="post">
-        <div class="formGroup" th:each="fichas : ${palabrapaficha}">
-            <select name="fichas[]" id="fichas" multiple>
-                <option th:text="${fichas.numerosupuesto}" multiple>Fichax</option>
+        <div class="formGroup" >
+            <label for="course">Select the numbers of the courses to which you want to assign the event:</label>
+            <select id="course" name="course">
+                <option th:each="courseNumber : ${courseNumbers}" th:value="${courseNumber}" th:text="${courseNumber}" multiple></option>
             </select>
         </div>
         <div class="formGroup">
