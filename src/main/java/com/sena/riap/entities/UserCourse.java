@@ -17,7 +17,7 @@ public class UserCourse {
 
     // @ManyToOne(cascade = CascadeType.ALL)
     @Column(name = "id_user")
-    private Long IdUser;
+    private Long idUser;
 
     public Long getIdUserCourse() {
         return idUserCourse;
@@ -36,10 +36,10 @@ public class UserCourse {
     }
 
     public Long getIdUser() {
-        return IdUser;
+        return idUser;
     }
 
     public void setIdUser(Long idUser) {
-        IdUser = idUser;
+        idUser = idUser;
     }
 }
