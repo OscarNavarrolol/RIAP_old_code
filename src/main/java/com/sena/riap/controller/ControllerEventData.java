@@ -32,8 +32,8 @@ public class ControllerEventData {
     @GetMapping("/listEvent")
     public String listEvents (Model model) {
         List<EventData> eventData = eventDataService.getEventData();
-        model.addAttribute("event", eventData);
-        return "admin/principal/ListUsers";
+        model.addAttribute("events", eventData);
+        return "admin/principal/EventList";
     }
 
     @GetMapping("/createEvent")
