@@ -16,4 +16,6 @@ public interface EventDataService {
 
     public void deleteEventData(Long id);
 
+    public List<EventData> findEventsByCourseNumber (int courseNumber);
+
 }

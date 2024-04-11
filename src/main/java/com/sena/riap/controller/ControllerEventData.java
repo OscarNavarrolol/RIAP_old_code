@@ -9,10 +9,7 @@ import com.sena.riap.service.UserDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,9 +27,11 @@ public class ControllerEventData {
     private UserDataService userDataService;
 
     @GetMapping("/listEvent")
-    public String listEvents (Model model) {
-        List<EventData> eventData = eventDataService.getEventData();
-        model.addAttribute("events", eventData);
+    public String listEvents (@RequestParam(required = false) Integer courseNumber, Model model) {
+        if (courseNumber != null) {
+            List<EventData> eventData = eventDataService.findEventsByCourseNumber(courseNumber);
+            model.addAttribute("events", eventData);
+        }
         return "admin/principal/EventList";
     }
 

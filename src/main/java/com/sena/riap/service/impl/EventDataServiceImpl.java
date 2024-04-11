@@ -37,4 +37,9 @@ public class EventDataServiceImpl implements EventDataService {
     public void deleteEventData(Long id) {
 
     }
+
+    @Override
+    public List<EventData> findEventsByCourseNumber(int courseNumber) {
+        return eventDataRepository.findEventsByCourseNumber(courseNumber);
+    }
 }
