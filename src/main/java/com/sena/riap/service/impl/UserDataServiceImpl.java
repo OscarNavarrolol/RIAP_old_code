@@ -71,4 +71,9 @@ public class UserDataServiceImpl implements UserDataService {
     public UserData getLoggedInUser() {
         return loggedInUser;
     }
+
+    @Override
+    public List<UserData> getLearnersByCourseNumber(int courseNumber) {
+        return userDataRepository.findLearnersByCourseNumber(courseNumber);
+    }
 }

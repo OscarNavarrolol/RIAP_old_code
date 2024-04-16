@@ -14,6 +14,7 @@ import java.time.LocalTime;
 public class EventData {
     @Id
     @Column(name = "id_event")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idEvent;
 
     @NotNull(message = "Date cannot be null")
@@ -76,8 +77,6 @@ public class EventData {
     public void setObjective(String objective) {
         this.objective = objective;
     }
-
-
 
     public String getLocation() {
         return location;

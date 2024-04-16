@@ -13,6 +13,7 @@ public class Attendance {
 
     @Id
     @Column(name = "id_attendance")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idAttendance;
 
     // @NotNull(message = "Event cannot be null")
@@ -25,7 +26,7 @@ public class Attendance {
     @Column(name = "id_user")
     private Long idUser;
 
-    @NotNull(message = "Attendance time cannot be null")
+    // @NotNull(message = "Attendance time cannot be null")
     @Column(name = "attendance_time")
     private LocalDateTime attendanceTime;
 

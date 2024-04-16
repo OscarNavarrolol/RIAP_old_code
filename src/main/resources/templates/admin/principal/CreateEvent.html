@@ -16,10 +16,7 @@
                 <option th:each="courseNumber : ${courseNumbers}" th:value="${courseNumber}" th:text="${courseNumber}" multiple></option>
             </select>
         </div>
-        <div class="formGroup">
-            <label for="idEvent">ID:</label>
-            <input type="number" id="idEvent" name="idEvent" th:value="${eventData.idEvent}" required>
-        </div>
+            <input type="hidden" id="idEvent" name="idEvent" th:value="${eventData.idEvent}">
         <div class="formGroup">
             <label for="date">date:</label>
             <input type="date" id="date" name="date" th:value="${eventData.date}" required>
