@@ -92,19 +92,20 @@ public class ControllerEventData {
     }
 
 // peligro tractomula
-    @GetMapping("/UpdateEvent/{eventId}")
-    public String updateEvent(Model model, @PathVariable Long id) {
-        model.addAttribute("eventData", eventDataService.getEventDataById(id));
-        model.addAttribute("action", "/eventData/updateEvent"+ id);
+    @GetMapping("/updateEvent/{eventId}")
+    public String updateEvent(Model model, @PathVariable Long eventId) {
+        model.addAttribute("eventData", eventDataService.getEventDataById(eventId));
+        model.addAttribute("action", "/eventData/updateEvent/"+ eventId);
         return "admin/principal/CreateEvent";
     }
 
     @PostMapping("/updateEvent/{eventId}")
-    public String updateEvent(@PathVariable Long eventId, @RequestBody EventData updatedEventData) {
+    public String updateEvent(@PathVariable Long eventId, EventData updatedEventData) {
         eventDataService.updateEventData(eventId,updatedEventData);
         return "redirect:/eventData/listEvent";
     }
 // peligro cola de la tractomula
+
     @ModelAttribute("courseNumbers")
     public List<Integer> allCourseNumbers() {
         UserData user = userDataService.getLoggedInUser();

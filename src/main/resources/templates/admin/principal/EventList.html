@@ -40,7 +40,7 @@
             <td th:text="${event.endTime}"></td>
             <td th:text="${event.location}"></td>
             <td>
-                <a th:href="@{/eventData/UpdateEvent/{idEvent}(idEvent=${event.idEvent})}">Edit</a>
+                <a th:href="@{/eventData/updateEvent/{idEvent}(idEvent=${event.idEvent})}">Edit</a>
                 <a th:href="@{/eventData/deleteEvent/{eventId}(eventId=${event.idEvent})}" class="delete">delete</a>
             </td>
         </tr>
