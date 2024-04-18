@@ -16,9 +16,9 @@ public interface AttendanceService {
 
     public Attendance updateAttendance(Long id,Attendance attendance);
 
-    public void deleteAttendance (Long id);
-
     List<Attendance> getAttendancesByEventId(Long eventId);
 
     List<Attendance> getAttendancesByUserId(Long userId);
+
+    void deleteAllByEventId(Long eventId);
 }

@@ -35,11 +35,6 @@ public class AttendanceServiceImpl implements AttendanceService {
     }
 
     @Override
-    public void deleteAttendance(Long id) {
-
-    }
-
-    @Override
     public List<Attendance> getAttendancesByEventId(Long eventId) {
         return null;
     }
@@ -47,5 +42,10 @@ public class AttendanceServiceImpl implements AttendanceService {
     @Override
     public List<Attendance> getAttendancesByUserId(Long userId) {
         return null;
+    }
+
+    @Override
+    public void deleteAllByEventId(Long eventId) {
+        attendanceRepository.deleteAllByIdEvent(eventId);
     }
 }

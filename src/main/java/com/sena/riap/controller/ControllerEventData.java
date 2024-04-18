@@ -75,51 +75,36 @@ public class ControllerEventData {
         return "redirect:/userData/principal";
     }
 
-    /*
-    @DeleteMapping("/deleteEvent/{eventId}")
+    @GetMapping("/deleteEvent/{eventId}")
     public String deleteEvent(@PathVariable Long eventId) {
-
-        if (eventDataService.existsById(eventId)) {
-
-            attendanceService.deleteByEventId(eventId);
-
-
-            eventDataService.deleteById(eventId);
-
-            return "Evento y asistencias asociadas eliminados exitosamente";
+        if (eventId != null) {
+            try {
+                attendanceService.deleteAllByEventId(eventId);
+                eventDataService.deleteEventData(eventId);
+                return "redirect:/eventData/listEvent";
+            } catch (Exception e) {
+                System.out.println("error deleteEvent method" + e);
+            }
         } else {
-            return "El evento con ID " + eventId + " no existe";
+            System.out.println("EVENT ID NOT FOUND");
         }
+        return "redirect:/eventData/listEvent";
     }
 
-     */
-
-    /*
-
-    @GetMapping("/createEvent")
-    public String updateEvent(Model model) {
-        model.addAttribute("eventData", aaaaaa);
-        model.addAttribute("action", "/eventData/createEvent");
+// peligro tractomula
+    @GetMapping("/UpdateEvent/{eventId}")
+    public String updateEvent(Model model, @PathVariable Long id) {
+        model.addAttribute("eventData", eventDataService.getEventDataById(id));
+        model.addAttribute("action", "/eventData/updateEvent"+ id);
         return "admin/principal/CreateEvent";
     }
 
-    @PotMapping("/updateEvent/{eventId}")
+    @PostMapping("/updateEvent/{eventId}")
     public String updateEvent(@PathVariable Long eventId, @RequestBody EventData updatedEventData) {
-
-        if (eventDataService.existsById(eventId)) {
-
-            updatedEventData.setIdEvent(eventId);
-
-
-            eventDataService.saveEventData(updatedEventData);
-
-            return "Evento actualizado";
-        } else {
-            return "El evento con ID " + eventId + " no existe";
-        }
+        eventDataService.updateEventData(eventId,updatedEventData);
+        return "redirect:/eventData/listEvent";
     }
-     */
-
+// peligro cola de la tractomula
     @ModelAttribute("courseNumbers")
     public List<Integer> allCourseNumbers() {
         UserData user = userDataService.getLoggedInUser();
